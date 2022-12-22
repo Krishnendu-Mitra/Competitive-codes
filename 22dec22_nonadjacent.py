@@ -11,11 +11,11 @@ def funa(arr,n):
     cache = 0
     j = 0
     temp = arr[0]
-    if(n <= 2):
+    if(n >= 0 and n <= 2):
         return max(arr)
     else:
         cache = cache + 1
-    for i in range(1,len(arr)):
+    for i in range(1,n):
         temp, j = j + arr[i], max(j,temp) #tuple unpack method (a,b = a+b, b-a)
     return max(j, temp)
 def funb():
