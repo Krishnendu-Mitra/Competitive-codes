@@ -1,0 +1,148 @@
+<html len="en">
+<head>
+	<title version="1.0">Autofill prototype by krish</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="https://avatars.githubusercontent.com/u/111632830?v=4">
+</head>
+<style>
+body{
+	padding: 0px;
+	margin: 0px;
+	background-repeat: no-repeat;
+	background: linear-gradient(123deg, #670092, #000, #670092);
+	color: aqua;
+	text-align: center;
+}
+#input{
+	width: 50%;
+	padding: 10px 15px;
+	color: #0c8ff0;
+	font-weight: bold;
+	margin-top: 10%;
+	border-radius: 50px;
+	border: 2px solid #0c8ff0;
+	outline: none;
+	background: #fff;
+}
+#ansbox{
+	background: #fff;
+	text-align: left;
+	width: 45.5%;
+	height: auto;
+	position: absolute;
+	top: 22.5%;
+	left: 26%;
+}
+ul{
+  list-style-type: none;
+}
+li:hover{
+	background: #f6f6f6;
+	box-shadow: 0 0 2px 1px grey;
+}
+section{
+  display: none;
+  color: #fff;
+}
+h1{
+  position: absolute;
+  left: 41%;
+  display: flex;
+  flex-direction: row;
+}
+.blue{
+  color: #0c8ff0;
+}
+.red{
+  color: red;
+}
+.green{
+  color: green;
+}
+.yellow{
+  color: yellow;
+}
+@media only screen and (max-width: 800px){
+    body{
+        background: red;
+    }.container,h1{
+      display: none;
+    }section{
+      display: block;
+    }
+}
+</style>
+<body>
+  <h1><span class="blue">G</span><span class="red">O</span><span class="yellow">O</span><span class="blue">G</span><span class="green">L</span><span class="red">E</span>
+  .<span class="blue">K</span><span class="red">R</span><span class="yellow">I</span><span class="green">S</span><span class="red">H</span></h1>
+<div class="container">
+  <input type="text" id="input" placeholder="Type here.. " />
+  <ul id="ansbox"></ul>
+</div>
+<section>
+  <h2>Merry Christmas Everyone</h2>
+  <p>We wish you merry christmas,<br>
+    We wish you merry christmas,<br>
+    We wish you merry christmas,<br>
+    And a happy new year,<br>
+    <br>Good tidings to you,<br>
+    And all of you kin<br>
+    Good tidings for christmas,<br>
+    And a happy new year.<br>
+    <br>We all know that Santa's coming,<br>
+    We all know that Santa's coming,<br>
+    We all know that Santa's coming,<br>
+    And soon will be here.<br>
+    <br>Good tidings to you,<br>
+    And all of you kin<br>
+    Good tidings for christmas,<br>
+    And a happy new year.<br>
+    <br>We wish you merry christmas,<br>
+    We wish you merry christmas,<br>
+    We wish you merry christmas,<br>
+    And a happy new year,<br>
+  </p>
+  <h4>--Krishnendu Mitra</h4>
+  <p>(Please open it in your computer to see the real programe)</p>
+</section>
+</body>
+<script>
+let database = ["Africa", "Alpha", "Amazon", "Appendchild", "Brazil", "C & C++", "Child", "Css", "Egypt", "General", "Generated", "Git", "Go", "Html", "Italy", "India", "Indonesia", "Java", "Java Script",
+"Kolkata","kidKrishkode", "Landon","Latter", "Lorensium", "Lateral", "Language", "Loss angelish", "Mango", "Maneger", "Mosquito", "Multimedia", "Multiplayer", "Multiplexer", "Name", "Narration", "Noun", 
+"Netherland", "New york", "New line", "North", "Omnitrix", "Omniverse", "Pizza", "Portugal", "Pop method", "Python", "Question", "Spain", "Super", "Ultimate", "Universe", "University", "Wander", "Wolf", "Zoo"];
+database.sort();
+(function onkeydown() {
+  "use strict";
+  let n = document.getElementById("input");
+  let ans = document.getElementById("ansbox");
+  n.addEventListener('input', calculate);
+  ans.addEventListener('click', picker);
+  function calculate({ target }) {
+    let data = target.value;
+    ans.innerHTML = ' ';
+    if (data.length) {
+      let m = auco(data);
+      m.forEach(value => { maker(value); });
+    }
+  }
+  function auco(inputValue) {   
+    return database.filter(
+      (value) => value.toLowerCase().includes(inputValue.toLowerCase())
+    );
+  }
+  function maker(value) {
+    ans.innerHTML = ans.innerHTML + `<li>${value}</li>`;
+  }
+  function picker({ target }) {
+    if (target.tagName === 'LI') {
+      n.value = target.textContent;
+      ans.innerHTML = ' ';
+      setTimeout(function on(){
+        alert("Search engine not design!");
+      },1000);
+    }
+  }
+})();
+</script>
+</html>
