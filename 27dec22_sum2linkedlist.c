@@ -105,8 +105,14 @@ void station(){
         scanf("%d",&vender);
         loco(&head2, vender);
     }
+    printf("Your list1 is: \n");
+    display(head1);
+    printf("Your list2 is: \n");
+    display(head2);
     adder(head1, head2, &result);
+    printf("Result is: \n");
     display(result);
+    printf("\tThank you\t\n");
 }
 int main(){
     station();
