@@ -1,3 +1,11 @@
+//Question----------------------------------->
+/*Given two linked list in this formate, return their
+sum. For example, given:
+9->9
+5->2
+You should return 124=(99+25) as:
+4->2->1*/
+//Answer------------------------------------->
 #include<stdio.h>
 #include<stdlib.h>
 //code by krish(Themes Train)
@@ -7,7 +15,7 @@ struct Node{
 };
 typedef struct Node node;
 node *head;  
-node *createNode(int element){
+node *createNode(int element){//very importent function or this programe
 	node *temp;
 	temp = (node*)malloc(sizeof(node));
 	temp -> element = element;  
