@@ -1,4 +1,4 @@
-<html len="en">
+<html lang="en">
 <head>
 	<title version="1.0">Autofill prototype by krish</title>
   <meta charset="utf-8">
@@ -33,6 +33,10 @@ body{
 	position: absolute;
 	top: 22.5%;
 	left: 26%;
+  max-height: 500px;
+  overflow: hidden;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 ul{
   list-style-type: none;
@@ -40,6 +44,7 @@ ul{
 li:hover{
 	background: #f6f6f6;
 	box-shadow: 0 0 2px 1px grey;
+  cursor: pointer;
 }
 section{
   display: none;
@@ -110,15 +115,17 @@ h1{
 <script>
 let database = ["Africa", "Alpha", "Amazon", "Appendchild", "Brazil", "C & C++", "Child", "Css", "Egypt", "General", "Generated", "Git", "Go", "Html", "Italy", "India", "Indonesia", "Java", "Java Script",
 "Kolkata","kidKrishkode", "Landon","Latter", "Lorensium", "Lateral", "Language", "Loss angelish", "Mango", "Maneger", "Mosquito", "Multimedia", "Multiplayer", "Multiplexer", "Name", "Narration", "Noun", 
-"Netherland", "New york", "New line", "North", "Omnitrix", "Omniverse", "Pizza", "Portugal", "Pop method", "Python", "Question", "Spain", "Super", "Ultimate", "Universe", "University", "Wander", "Wolf", "Zoo"];
+"Netherland", "New york", "New line", "North", "Omnitrix", "Omniverse", "Pizza", "Portugal", "Pop method", "Python", "Question", "Spain", "Super", "Ultimate", "Universe", "University", "Wander", "Wolf", "Zoo",
+"How to make autofill engine","How to hack google","What is html","Why search","How to became a programmer","Can youtube pay me for my videos","How to rich","Vs code download","Download free fire",
+"Gta VI pulish date","How to looking beautigul","Operating system course free"];
 database.sort();
-(function onkeydown() {
+(function onkeydown(){
   "use strict";
   let n = document.getElementById("input");
   let ans = document.getElementById("ansbox");
   n.addEventListener('input', calculate);
   ans.addEventListener('click', picker);
-  function calculate({ target }) {
+  function calculate({ target }){
     let data = target.value;
     ans.innerHTML = ' ';
     if (data.length) {
@@ -126,15 +133,15 @@ database.sort();
       m.forEach(value => { maker(value); });
     }
   }
-  function auco(inputValue) {   
+  function auco(inputValue){   
     return database.filter(
       (value) => value.toLowerCase().includes(inputValue.toLowerCase())
     );
   }
-  function maker(value) {
+  function maker(value){
     ans.innerHTML = ans.innerHTML + `<li>${value}</li>`;
   }
-  function picker({ target }) {
+  function picker({ target }){
     if (target.tagName === 'LI') {
       n.value = target.textContent;
       ans.innerHTML = ' ';
