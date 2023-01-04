@@ -9,16 +9,17 @@ you should return 2.'''
 j = []
 cache = 99999
 arr = []
+#functions--------------->
 def calculation(arr, n):
-    temp = [0] * cache
+    temp = [0] * cache #make a list of size cache, with all cache elements being the value 0
     for i in range(n):
-        temp[arr[i][0]] += 1
-        temp[arr[i][1] + 1] -= 1
-    ans = temp[0]
+        temp[arr[i][0]] = temp[arr[i][0]] + 1
+        temp[arr[i][1] + 1] = temp[arr[i][1] + 1] - 1
+    count = temp[0]
     for i in range(1,cache):
-        temp[i] += temp[i - 1]
-        ans = max(ans, temp[i])
-    return ans
+        temp[i] = temp[i] + temp[i - 1]
+        count = max(count, temp[i])
+    return count
 #Main------------------->
 #[[30, 75],[0, 50],[60, 150]] give me 2
 start = 0
