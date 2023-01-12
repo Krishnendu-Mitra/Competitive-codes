@@ -33,3 +33,4 @@ if(n >= 0):
     getdata(n)
 else:
     print("Error size not valid\n")
+#happy ending
