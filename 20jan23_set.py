@@ -1,6 +1,13 @@
+#Question---------------------------------->
+'''The power set of a set is the set of all its subsets. 
+Write a function that, given a set, generates its power set.
+For example, given the set {1, 2, 3}, it should return 
+{{}, {1}, {2}, {3}, {1, 2}, {1, 3}, {2, 3}, {1, 2, 3}}'''
+#Answer------------------------------------>
 import os
 import math
 #code by krish
+#function------------------------->
 def calculationB(arr,n):
     i = n
     while (i > 0 and arr[i - 1] <= arr[i]):
