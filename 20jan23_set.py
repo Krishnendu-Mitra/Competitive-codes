@@ -44,10 +44,13 @@ def calculationA(arr,n):
 arr = []
 temp = 0
 n = int(input("Enter the size of arr: "))
-for i in range(n):
-    print(i+1,"Value is")
-    temp = int(input("<<< "))
-    arr.append(temp)
-print("{ ")
-calculationA(arr,n)
-print(" }")
+if(n>-1):
+    for i in range(n):
+        print(i+1,"Value is")
+        temp = int(input("<<< "))
+        arr.append(temp)
+    print("{ ")
+    calculationA(arr,n)
+    print(" }")
+else:
+    print("Error size is not valid!\n")
