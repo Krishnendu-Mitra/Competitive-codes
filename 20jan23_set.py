@@ -27,11 +27,11 @@ def calculationB(arr,n):
         arr[n - k] = temp
     return True
 def calculationA(arr,n):
-    contain = [0]*n
-    print("{ }")
+    cache = [0]*n
+    print("{ }") #use iterationtool for make all combination
     for i in range(n):
-        contain[i] = 1
-        Contain = contain.copy()
+        cache[i] = 1
+        Contain = cache.copy()
         while True:
             print("{",end="")
             for j in range(n):
